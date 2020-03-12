@@ -8,13 +8,10 @@ class SIM868:
 
     def get(self):
         return_string = ""
-        read_next = True
-        while read_next:
+        while self.sp.in_waiting > 0:
             text = str(self.sp.readline().decode('UTF-8').strip())
             print('SIM868: ' + text)
             return_string += text
-            if text == 'OK' or text == 'ERROR':
-                read_next = False
         return return_string
 
     def write(self, command):
@@ -28,7 +25,7 @@ class SIM868:
 
 SIM = SIM868()
 SIM.write("AT+CGNSPWR=1")
-SIM.write("AT+CGNSURC=0")
+SIM.write("AT+CGNSURC=1")
 
 n_cont = "y"
 while n_cont != "n":
