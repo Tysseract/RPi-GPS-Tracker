@@ -4,7 +4,7 @@ import time
 
 class SIM868:
     def __init__(self):
-        self.sp = serial.Serial('COM5', 9600)
+        self.sp = serial.Serial('COM5', 115200)
 
     def get(self):
         return_string = ""
