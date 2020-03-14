@@ -1,3 +1,5 @@
+# defines SIM868 class for communicating with GSM/GPRS/GNSS HAT over serial wit AT commands
+
 import math
 import sys
 import serial

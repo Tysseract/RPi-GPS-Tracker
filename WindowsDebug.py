@@ -1,5 +1,4 @@
 import math
-import serial
 import time
 import SIM868
 
