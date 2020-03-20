@@ -7,9 +7,10 @@ import time
 
 class SIM868:
     def __init__(self):
-        port = '/dev/ttyAMA0'
+        port = '/dev/serial0'
         if sys.platform.startswith('win'):
             port = 'COM5'
+
         self.sp = serial.Serial(port, 115200)
 
     def get(self):
